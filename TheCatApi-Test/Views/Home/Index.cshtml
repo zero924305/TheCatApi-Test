@@ -1,8 +1,131 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Breeds";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-3">
+                <label for="breeds">Choose a breed:</label>
+            </div>
+            <div class="col-9">
+                <select id="breedSelect" name="breeds" class="form-control">
+                    <option value="">Select Breeds</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        <div class="row">
+            <div class="col-6">
+
+                <div class="row">
+                    <div class="col-6">
+                        <h3>Breed Name:</h3>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="Breed_Name"></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img id="Breed_image" src="" style="width:100%;height:500px;">
+                    </div>
+                </div>               
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col">
+                        <h3>Breed Info</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>Origin</p>
+                    </div>
+                    <div class="col-8">
+                        <p id="Breed_Origin"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>Country Code</p>
+                    </div>
+                    <div class="col-8">
+                        <p id="Breed_CountryCode"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>Temperament</p>
+                    </div>
+                    <div class="col-8">
+                        <p id="Breed_Temperament"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>SocialNeeds</p>
+                    </div>
+                    <div class="col-8">
+                        <span id="Breed_SocialNeeds"></span><span>/5</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>Stranger Friendly</p>
+                    </div>
+                    <div class="col-8">
+                        <span id="Breed_StrangerFriendly"></span><span>/5</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>Life Span</p>
+                    </div>
+                    <div class="col-8">
+                        <span id="Breed_LifeSpan"></span><span>Years</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>Description</p>
+                    </div>
+                    <div class="col-8">
+                        <p id="Breed_Description"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            More Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title Breed_Name"  id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe id="BreedUrlDetail" src="" width="100%" height="500" style="border:none;">
+                </iframe>
+            </div>
+        </div>
+    </div>
 </div>
