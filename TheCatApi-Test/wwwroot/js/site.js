@@ -49,6 +49,25 @@ function showBreedsDetailSelect(data) {
     $("#breedSelect").html(selectValue);
 }
 
+//Set selector change function 
+BreedSelectID.change(async function () {
+    let breed_id = BreedSelectID.val();
+    if (!breed_id)
+        triggerBreedDetailModel(breed_id);
+
+    let url = ImageUrl.concat(breed_id);
+    let result = searchDetail(BreedsData, breed_id);
+    catData = result;
+
+    BreedsImageData = await getapi(url);
+    console.log(BreedsImageData);
+
+    GetSelectBreedData(catData);
+    BreedImageID.attr("src",BreedsImageData[0].url);
+    triggerBreedDetailModel(breed_id);
+})
+
+
 //Replace html elements by ID
 function GetSelectBreedData(BreedData) {
     let BreedName = $(".Breed_Name");
@@ -85,6 +104,11 @@ function triggerBreedDetailModel(data) {
 //Search by input value
 function searchDetail(object, value) {
     return object.find((item) => item.id === value);
+}
+
+//Set Image src by value
+function DisplayBreedsImage(ImageTagID, BreedImageData) {
+    return ImageTagID.attr("src", BreedImageData);
 }
 
 //Replace all html element in for loop
