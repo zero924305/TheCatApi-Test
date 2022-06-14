@@ -1,7 +1,7 @@
 # TheCatApi-Test
 Display Breeds Information
 
-The application use c# for checking and call the api data from "TheCatAPI". 
+The application use c# for checking and use javascript /jQuery call to api data from "TheCatAPI"
 
 Description:
 1. Get all the breeds detail from "TheCatApi"
