@@ -25,15 +25,26 @@ async function getapi(url)
                 .then(data=>{return data.json()})
                 .catch(console.error());
 
-    var data = await response;
+    var data = await respones;
 
     if(!BreedsData.length)
     {
         BreedsData = data;
+        showBreedsDetailSelect(BreedsData);
     }
 
-    retrun data;
+    return data;
 }
 
 //Get Breeds Api Data 
 getapi(BreedsUrl);
+
+//set the breeds detail into select option
+function showBreedsDetailSelect(data) {
+    let selectValue = `<option value="">Select Breeds</option>`;
+
+    for (let i = 0; i < data.length; i++) {
+        selectValue += `<option value="${data[i].id}">${data[i].name}</option>`;
+    }
+    $("#breedSelect").html(selectValue);
+}
