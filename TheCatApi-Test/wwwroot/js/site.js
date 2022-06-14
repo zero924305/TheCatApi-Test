@@ -49,7 +49,38 @@ function showBreedsDetailSelect(data) {
     $("#breedSelect").html(selectValue);
 }
 
+//Replace html elements by ID
+function GetSelectBreedData(BreedData) {
+    let BreedName = $(".Breed_Name");
+    let ModalDetailId = $("#BreedUrlDetail");
+    let Breed_CountryCode = $("#Breed_CountryCode");
+    let Breed_Origin = $("#Breed_Origin");
+    let Breed_Temperament =$("#Breed_Temperament");
+    let Breed_SocialNeeds = $("#Breed_SocialNeeds");
+    let Breed_StrangerFriendly = $("#Breed_StrangerFriendly");
+    let Breed_LifeSpan = $("#Breed_LifeSpan");
+    let Breed_Description = $("#Breed_Description");
 
+    ChangeAllValueWithSameId(BreedName, BreedData.name);
+    ChangeAllValueWithSameId(Breed_CountryCode, BreedData.country_code);
+    ChangeAllValueWithSameId(Breed_Origin, BreedData.origin);
+    ChangeAllValueWithSameId(Breed_Temperament, BreedData.temperament);
+    ChangeAllValueWithSameId(Breed_SocialNeeds, BreedData.social_needs);
+    ChangeAllValueWithSameId(Breed_StrangerFriendly, BreedData.stranger_friendly);
+    ChangeAllValueWithSameId(Breed_LifeSpan, BreedData.life_span);
+    ChangeAllValueWithSameId(Breed_Description, BreedData.description);
+
+    ModalDetailId.attr("src", BreedData.wikipedia_url);
+}
+
+
+//Trigger the model by value
+function triggerBreedDetailModel(data) {
+    if (!data)
+        $("#collapseExample").collapse('hide');
+    else
+        $("#collapseExample").collapse('show');
+}
 
 //Search by input value
 function searchDetail(object, value) {
