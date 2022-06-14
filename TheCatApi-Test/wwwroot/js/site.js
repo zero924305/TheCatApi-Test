@@ -48,3 +48,17 @@ function showBreedsDetailSelect(data) {
     }
     $("#breedSelect").html(selectValue);
 }
+
+
+
+//Search by input value
+function searchDetail(object, value) {
+    return object.find((item) => item.id === value);
+}
+
+//Replace all html element in for loop
+function ChangeAllValueWithSameId(id, value) {
+    for (let i = 0; i < id.length; i++) {
+        id[i].innerHTML = value;
+    }
+}
