@@ -7,8 +7,8 @@ const BreedSelectID = $("#breedSelect");
 const BreedImageID = $("#Breed_image");
 
 //End Point
-const BreedsUrl = 'https://localhost:5001/api/Breeds';
-const ImageUrl  = 'https://localhost:5001/api/Image/breed_id=';
+const BreedsUrl = '/api/Breeds';
+const ImageUrl  = '/api/Image/breed_id=';
 
 
 //Create Array
